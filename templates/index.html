@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+{% block content %}
+<h1 class="white_tag">{{ title }}</h1>
+{% for products in product %}
+    <a class="white_tag" href="/products/{{ products.id }}/">
+        {{ products.id }} : {{ products.title }}</a>
+{% endfor %}
+
+
+
+    <br>
+    <br>
+    <br>
+    <br>
+<p><a href="http://127.0.0.1:8000/review/">Отзывы</a></p>
+{% endblock %}

@@ -29,11 +29,11 @@ class Product(models.Model):
 
 class Review(models.Model):
     class Meta:
-        verbose_name = 'Описание'
-        verbose_name_plural = 'Описание'
+        verbose_name = 'Отзыв'
+        verbose_name_plural = 'Отзывы'
 
-    text = models.CharField('Текст',max_length=255)
-    product = models.ForeignKey(Product,verbose_name= 'Продукт', on_delete=models.CASCADE, null=True)
+    text = models.CharField('Текст', max_length=255)
+    product = models.ForeignKey(Product, verbose_name='Продукт', on_delete=models.CASCADE, null=True)
 
     def __str__(self):
         return self.text

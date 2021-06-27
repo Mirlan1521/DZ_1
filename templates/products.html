@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+<h1 class="white_tag"> {{ products.title }}</h1>
+
+
+{% for review in reviews %}
+
+    <p>Отзыв :  {{ review.text }}</p>
+
+{% endfor %}
+
+{% endblock %}
