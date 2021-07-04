@@ -20,8 +20,11 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-                  path('admin/', admin.site.urls),
-                  path('products/', views.index),
-                  path('products/<int:id>/', views.product_item),
-                  path('review/', views.review_list),
+                path('admin/', admin.site.urls),
+                path('products/', views.index),
+                path('products/<int:id>/', views.product_item),
+                path('review/', views.review_list),
+                path('add_product/', views.add_product),
+                path('add_review/', views.add_review),
+
                               ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
