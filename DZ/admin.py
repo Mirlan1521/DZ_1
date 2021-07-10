@@ -20,7 +20,7 @@ class ProductCategoryReview(admin.ModelAdmin):
 
 
 class ReviewAdmin(admin.ModelAdmin):
-    list_display = 'id text product '.split()
+    list_display = 'id text  author product '.split()
 
 
 # Register your models here.

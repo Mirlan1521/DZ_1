@@ -1,23 +1,35 @@
 {% extends 'layout.html' %}
 {% block content %}
-<h1 class="white_tag"> Отзывы </h1>
-<form action="/review/" method="get">
-    <input type="text" name="search_text" placeholder="Введите отзыв">
-    <select name="products">
-        <option value="">Все продукты</option>
+<h1> Отзывы </h1>
+<form action="/review/" class="row" method="get">
+<div class="col-3">
+    <input class= "form-control" name="search_text" placeholder="Введите ключевое слово">
+</div>
+    <br>
+<div class="col-3">
+    <select class="form-control" name="products">
+        <option class="form-control" value="">Все продукты</option>
         {% for product in products %}
             <option value="{{ product.id }}">
                 {{ product.title }}
-            </option>
+           </option>
 
         {% endfor %}
-
     </select>
-    <input type="submit" value="Отправить">
+</div>
+    <br>
+<div class="col-3">
+    <input class= "form-control" name="search_text" placeholder="Автор">
+</div>
+    <br>
+
+<div class="col-3">
+    <input class="btn btn-danger" type="submit" value="Отправить">
+</div>
 </form>
 {% for review in reviews %}
     <hr>
-    <p>Продукт:   {{ review.product.title }}</p>
+    <h4>Продукт:   {{ review.product.title }}</h4>
 
     <p>Отзыв:  {{ review.text }}</p>
 

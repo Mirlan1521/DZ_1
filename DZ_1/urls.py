@@ -26,5 +26,7 @@ urlpatterns = [
                 path('review/', views.review_list),
                 path('add_product/', views.add_product),
                 path('add_review/', views.add_review),
-
-                              ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+                path('login/', views.login),
+                path('logout/', views.logout),
+                path('register/', views.register),
+              ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

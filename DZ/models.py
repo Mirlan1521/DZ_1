@@ -33,6 +33,7 @@ class Review(models.Model):
         verbose_name_plural = 'Отзывы'
 
     text = models.CharField('Текст', max_length=255)
+    author = models.CharField('Автор', max_length=255, null=True)
     product = models.ForeignKey(Product, verbose_name='Продукт', on_delete=models.CASCADE, null=True)
 
     def __str__(self):

@@ -20,15 +20,25 @@
       <a class="navbar-brand" href="http://127.0.0.1:8000/review/">
           Отзывы
       </a>
+   <a class="navbar-brand" href="/register/">
+      Регистрация
+    <a/>
+      {% if user.is_authenticated %}
+          <a class="navbar-brand" href="/logout/">
+          Выйти ({{ user.username }})
+            </a>
+      {% else %}
+            <a class="navbar-brand" href="/login/">
+          Войти
+            </a>
+      {% endif %}
       <img src="{% static 'images/11272_w750_h_r.jpg' %}" alt="" width="100" height="50" class="d-inline-block align-text-top">
 
     </a>
   </div>
 </nav>
 <nav class="navbar navbar-light bg-light">
-  <div class="container-fluid">
     <a class="navbar-brand" href="#">Категории товаров: <br>1:Молочная 2:Овощи 3: Фрукты</a>
-  </div>
 </nav>
 <div class="container" style="text-align: center">
     {% block content %}
@@ -36,4 +46,5 @@
     {% endblock %}
 </div>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </html>
